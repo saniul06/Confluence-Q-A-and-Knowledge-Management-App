@@ -1,0 +1,286 @@
+:root {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #172b4d;
+  background: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* Page */
+
+.admin-page {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-page h1 {
+  margin: 0 0 24px;
+  font-size: 24px;
+}
+
+/* Topic manager */
+
+.topic-manager {
+  background: #fff;
+}
+
+.topic-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.topic-header h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.muted {
+  color: #6b778c;
+  font-size: 14px;
+}
+
+/* Buttons */
+
+.button {
+  border: 1px solid #dfe1e6;
+  background: #fff;
+  color: #172b4d;
+  border-radius: 4px;
+  padding: 8px 14px;
+}
+
+.button:hover:not(:disabled) {
+  background: #f4f5f7;
+}
+
+.button-primary {
+  background: #0c66e4;
+  border-color: #0c66e4;
+  color: #fff;
+}
+
+.button-primary:hover:not(:disabled) {
+  background: #0055cc;
+}
+
+.button-danger {
+  color: #de350b;
+}
+
+.button-small {
+  padding: 5px 10px;
+  font-size: 13px;
+}
+
+/* Table */
+
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #dfe1e6;
+  border-radius: 6px;
+}
+
+.topic-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.topic-table th,
+.topic-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #dfe1e6;
+}
+
+.topic-table th {
+  background: #f4f5f7;
+  color: #42526e;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.topic-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.topic-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.topic-name {
+  font-weight: 600;
+  min-width: 180px;
+}
+
+.topic-description {
+  color: #42526e;
+}
+
+.actions-column {
+  width: 180px;
+}
+
+.table-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Loading / empty */
+
+.table-loading,
+.empty-state {
+  padding: 48px 24px;
+  text-align: center;
+  border: 1px solid #dfe1e6;
+  border-radius: 6px;
+}
+
+.empty-state h3 {
+  margin: 0 0 8px;
+}
+
+/* Pagination */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.topic-count {
+  text-align: center;
+}
+
+/* Error */
+
+.error-message,
+.form-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border: 1px solid #ffbdad;
+  background: #ffebe6;
+  color: #bf2600;
+  border-radius: 4px;
+  white-space-collapse: break-spaces
+}
+
+/* Modal */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgb(9 30 66 / 54%);
+  z-index: 1000;
+}
+
+.modal {
+  width: min(500px, 100%);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgb(9 30 66 / 25%);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #dfe1e6;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.modal-close {
+  border: 0;
+  background: transparent;
+  font-size: 24px;
+  color: #6b778c;
+}
+
+.modal form {
+  padding: 24px;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #b3bac5;
+  border-radius: 4px;
+  color: #172b4d;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: 2px solid #4c9aff;
+  border-color: #4c9aff;
+}
+
+.field-hint {
+  display: block;
+  margin-top: 4px;
+  color: #6b778c;
+  font-size: 12px;
+  text-align: right;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+}

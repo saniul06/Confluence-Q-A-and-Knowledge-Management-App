@@ -1,0 +1,385 @@
+.question-board {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.question-board__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.question-board__header h1 {
+  margin: 0 0 6px;
+  font-size: 24px;
+}
+
+.question-board__header p {
+  margin: 0;
+  color: #6b778c;
+}
+
+.question-filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dfe1e6;
+  border-radius: 4px;
+  padding: 9px 10px;
+  font: inherit;
+}
+
+.form-select {
+  min-width: 180px;
+}
+
+.form-select--multiple {
+  min-height: 130px;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #4c9aff;
+}
+
+.form-help {
+  color: #6b778c;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.question-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-card {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px;
+  text-align: left;
+  background: white;
+  border: 1px solid #dfe1e6;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.question-card:hover {
+  border-color: #b3bac5;
+}
+
+.question-card__main {
+  min-width: 0;
+}
+
+.question-card h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+.question-card__meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  color: #6b778c;
+  font-size: 13px;
+}
+
+.question-card__topics,
+.question-details__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.topic-tag {
+  display: inline-flex;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background: #ebecf0;
+  color: #172b4d;
+  font-size: 12px;
+}
+
+.status-badge {
+  flex-shrink: 0;
+  padding: 5px 9px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge--open {
+  background: #fff0b3;
+}
+
+.status-badge--answered {
+  background: #abf5d1;
+}
+
+.status-badge--faq_published {
+  background: #deebff;
+}
+
+.button {
+  border: none;
+  border-radius: 4px;
+  padding: 9px 16px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.button--primary {
+  background: #0052cc;
+  color: white;
+}
+
+.button--secondary {
+  background: #ebecf0;
+  color: #172b4d;
+}
+
+.question-list__empty {
+  padding: 48px;
+  text-align: center;
+  border: 1px dashed #dfe1e6;
+  border-radius: 6px;
+}
+
+.question-list__empty h3 {
+  margin: 0 0 8px;
+}
+
+.question-list__empty p {
+  margin: 0;
+  color: #6b778c;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(9, 30, 66, 0.54);
+  z-index: 1000;
+}
+
+.modal {
+  width: min(600px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 6px;
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #dfe1e6;
+}
+
+.modal__header h2 {
+  margin: 0;
+}
+
+.modal__close {
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.question-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+}
+
+.question-form__space {
+  padding: 10px;
+  border-radius: 4px;
+  background: #f4f5f7;
+  color: #42526e;
+}
+
+.modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.form-error,
+.question-board__error {
+  padding: 10px 12px;
+  border-radius: 4px;
+  background: #ffebe6;
+  color: #bf2600;
+}
+
+.question-details {
+  padding: 24px;
+}
+
+.question-details__header {
+  margin-top: 24px;
+}
+
+.question-details__header h1 {
+  margin: 12px 0 8px;
+  font-size: 26px;
+}
+
+.question-details__body {
+  margin: 24px 0;
+  padding: 18px;
+  white-space: pre-wrap;
+  border-radius: 6px;
+  background: #f4f5f7;
+  line-height: 1.6;
+}
+
+.question-details__assignment {
+  margin-bottom: 32px;
+  padding: 12px;
+  border-left: 3px solid #4c9aff;
+  background: #f4f5f7;
+}
+
+.answers {
+  margin-top: 32px;
+}
+
+.answer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.answer-card {
+  padding: 18px;
+  border: 1px solid #dfe1e6;
+  border-radius: 6px;
+}
+
+.answer-card--accepted {
+  border-color: #36b37e;
+}
+
+.answer-card__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.answer-card__header span {
+  color: #6b778c;
+  font-size: 13px;
+}
+
+.answer-card__body {
+  margin-bottom: 14px;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.accepted-badge {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #006644;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.answer-form {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #dfe1e6;
+}
+
+.answer-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/*   multi select topic   */
+
+.topic-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 200px; /* Limits height for 100+ items */
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #dfe1e6;
+  border-radius: 6px;
+  background-color: #fafbfc;
+}
+
+.topic-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border: 1px solid #c1c7d0;
+  border-radius: 16px;
+  background-color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.topic-chip:hover {
+  opacity: 0.8;
+}
+
+.topic-chip--selected {
+  background-color: #deebff;
+  border-color: #0052cc;
+  color: #0052cc;
+  font-weight: 500;
+}
+
+.topic-chip__checkbox {
+  display: none; /* Hide default checkbox, let the chip styling handle selection */
+}

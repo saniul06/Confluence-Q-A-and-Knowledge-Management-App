@@ -1,0 +1,81 @@
+modules:
+  consumer:
+    - key: schema-migration-consumer
+      queue: schema-migration-queue
+      function: runMigration
+
+    - key: knowledgeflow-notification-consumer
+      queue: knowledgeflow-expert-notifications
+      function: processNotification
+
+  trigger:
+    - key: app-installed-trigger
+      function: enqueueMigration
+      events:
+        - avi:forge:installed:app
+        - avi:forge:upgraded:app
+
+  confluence:spacePage:
+    - key: knowledgeflow-space-page
+      resource: main
+      resolver:
+        function: resolver
+      title: KnowledgeFlow
+      route: knowledgeflow
+
+  confluence:globalSettings:
+    - key: knowledgeflow-admin-page
+      resource: main
+      resolver:
+        function: resolver
+      title: KnowledgeFlow Admin
+
+  confluence:globalPage:
+    - key: knowledgeflow-dashboard
+      resource: main
+      route: dashboard
+      resolver:
+        function: resolver
+      title: KnowledgeFlow Dashboard
+
+  function:
+    - key: resolver
+      handler: index.handler
+
+    - key: runMigration
+      handler: db/migrations/index.runMigration
+      timeoutSeconds: 900
+
+    - key: enqueueMigration
+      handler: db/migrations/index.enqueueMigration
+
+    - key: processNotification
+      handler: handlers/processNotification.handler
+  sql:
+    - key: main
+      engine: mysql
+
+resources:
+  - key: main
+    path: static/knowledgeflow/dist
+    # remove when deploy in production
+    tunnel:
+      port: 5173
+
+app:
+  runtime:
+    name: nodejs24.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/c3a98c1a-999b-4697-bbf8-ea3ca6825ee3
+permissions:
+  scopes:
+    - read:content-details:confluence
+    - read:confluence-user
+    - read:space:confluence
+    - write:page:confluence
+
+  # remove when deploy in production
+  content:
+    styles:
+      - unsafe-inline
